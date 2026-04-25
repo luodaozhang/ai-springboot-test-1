@@ -1,0 +1,26 @@
+---
+description: Enforce entity naming suffix style
+globs: src/main/java/**/*.java
+alwaysApply: true
+---
+
+# Entity Naming Convention
+
+For data carrier class names (entity/transfer/view/business objects), enforce suffix style:
+
+- Forbidden suffixes: `Dto`, `Vo`
+- Required uppercase suffixes: `DTO`, `VO`, `BO`
+
+## Rules
+
+1. Never generate or rename classes to end with `Dto` or `Vo`.
+2. Use only uppercase acronym suffixes for these object types:
+   - `*DTO`
+   - `*VO`
+   - `*BO`
+3. When editing existing code, migrate non-compliant names to uppercase suffix style.
+
+## Examples
+
+- Bad: `UserDto`, `OrderVo`
+- Good: `UserDTO`, `OrderVO`, `AccountBO`
