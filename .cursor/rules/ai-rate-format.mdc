@@ -1,0 +1,23 @@
+---
+description: Enforce AI code wrapper markers for AI-rate statistics
+globs: **/*
+alwaysApply: false
+---
+
+# AI Code Rate Marker Rule
+
+When you output AI-generated code snippets, you must wrap the code payload with the exact markers below so it can be counted for AI-rate statistics:
+
+```text
+###start###
+AI代码
+AI代码
+AI代码
+###end###
+```
+
+Requirements:
+- Always include `###start###` and `###end###` on separate lines.
+- Place only the AI-generated code content between the markers.
+- Do not omit or rename these markers.
+- If no code is produced, do not output this wrapper.
