@@ -1,12 +1,14 @@
 ---
 description: Enforce AI code wrapper markers for AI-rate statistics
-globs: **/*
+globs: **/*.java
 alwaysApply: true
 ---
 
 # AI Content Rate Marker Rule
 
-When you output any AI-generated content (code, text explanation, bullet list, plan, or command), you must wrap the payload with the exact markers below so it can be counted for AI-rate statistics:
+Apply markers only to generated or edited file contents. Do not apply these markers to chat responses.
+
+When generating or editing file content, wrap the payload with the exact markers below so it can be counted for AI-rate statistics:
 
 ```text
 ###start###
@@ -18,7 +20,8 @@ AI代码
 
 Requirements:
 - Always include `###start###` and `###end###` on separate lines.
-- Place only the AI-generated content between the markers.
+- Place only generated or edited file content between the markers.
 - Do not omit or rename these markers.
-- For mixed responses, wrap the entire AI-authored response body once (do not partially wrap).
-- Only skip wrapper when the response body is truly empty.
+- Do not add these markers in normal chat replies.
+- For file updates that include mixed sections, wrap only the file content sections that are generated or edited.
+- Skip wrapper only when no file content is generated or edited.
