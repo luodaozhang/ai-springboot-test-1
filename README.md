@@ -1,10 +1,12 @@
 # ai-springboot-test-1
 
+English | [简体中文](README.zh-CN.md)
+
 Minimal Spring Boot Web application for AI testing.
 
 ## Requirements
 
-- Java 17+
+- Java 8+
 - Maven 3.9+
 
 ## Run
@@ -17,6 +19,7 @@ mvn spring-boot:run
 
 - `GET /` -> `ai-springboot-test-1 is running`
 - `GET /health` -> `ok`
+- `GET /request-id` -> `{ "requestId": "<uuid>" }`
 
 ## Notes
 
